@@ -1,0 +1,12 @@
+.accordion.accordion-mobile {
+    .lv2 {
+        margin: 30px 0 15px;
+    }
+    &.footer-menu {
+        & > li {
+            padding: 18px 0;
+            border-top: 1px solid $border-color;
+        }
+    }
+} 
+

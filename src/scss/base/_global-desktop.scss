@@ -1,0 +1,142 @@
+.banner-overlay {
+    max-width: 480px;
+    &.end {
+        text-align: right;
+        left: auto;
+        right: 38px;
+    }
+    &.center {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    &-white {
+        background: #fff ;
+        max-width: 360px;
+        padding: 16px;
+        &::after {
+            background-image: none;
+        }
+    }
+}
+
+
+.special-title-section {
+    .special-title {
+        width: 80%;
+        margin: 140px 0 !important;
+        &-wrapper {
+            width: 50%;
+        }
+    }
+}
+.home-info {
+    max-width: 220px;
+    margin: 0 auto !important;
+
+}
+
+
+ .ems-seo-text {
+    max-height: 210px;
+ }
+ .object-scale {
+    .prm-media {
+        object-fit: cover;
+        overflow: hidden;
+        img {
+            transition: all .32s ease-in-out;
+        }
+    }
+    &:hover {
+        .prm-media {
+            img {
+                transform: scale(1.2);
+            }
+        }
+    }
+ }
+
+
+ progress[value] {
+    position: relative;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 280px;
+    height: 4px;
+    color: red;
+    &::-webkit-progress-bar {
+        background-color: #CAC6C6;
+        border-radius: 2px;
+        box-shadow: #DF4826 rgb(223, 72, 38) inset; 
+    }
+}
+
+.swiper-login {
+    top: 50%;
+    transform: translate(0, -50%);
+    right: -620px;
+    width: 100%;
+    z-index: 0;
+    ul {
+        .slide-active {
+            p {
+                color: #fff;
+                font-weight: 600;
+                font-size: 32px;
+                padding: 0px 20px;
+                opacity: 1;
+            }
+        }
+        li {
+
+            p {
+                color: #F6F3F2;
+                opacity: 0.35;
+                font-weight: 600;
+                font-size: 32px;
+            }
+        }
+       
+    }
+   
+}
+
+.order-menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+
+#scroll-top-bx {
+    display: none;
+    width: 45px;
+    height: 45px;
+    padding: 7px 7px 6px 6px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    position: fixed;
+    border-radius: 80px;
+    background: rgba(255, 255, 255, 0.20);
+    right: 32px;
+    bottom: 40px;
+    z-index: 9;
+    outline: none;
+    cursor: pointer;
+    svg{
+      display: flex;
+      width: 32px;
+      height: 32px;
+      padding: 8px 9px;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 0;
+    }
+}
+  
+#scroll-top-bx.show {
+    display: flex;
+}

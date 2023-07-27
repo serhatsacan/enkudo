@@ -1,0 +1,50 @@
+.site-footer {
+    
+}
+
+.footer {
+    &-benefit {
+        overflow-x: auto;
+    }
+    &-image {
+        height: 100%;
+        img {
+            object-fit: cover;
+        }
+    }
+    &-slogan {
+        bottom: 40px;
+        left: 25px;
+        right: 45px;
+        line-height: 1.25;
+    }
+    &-download {
+        .prm-media {
+            width: 100px;
+        }
+    }
+}
+
+.global-sign {
+    width: 90px;
+    height: 25px;
+}
+.visa-master {
+    width: 119px;
+    height: 28px;
+}
+
+.icon-proj-e {
+    width: 70px !important;
+    height: 11px !important;
+}
+.icon-minus99{
+    width: 25px !important;
+    height: 13px !important;
+}
+.newsletter-close {
+    right: 0;
+    top: calc(50% - 5px);
+    height: 16px;
+    width: 16px;
+}

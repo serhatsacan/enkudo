@@ -1,0 +1,182 @@
+.search-input {
+    min-width: 380px;
+}
+
+.phone-box{
+  .phone-bg{
+    display: flex;
+    width: 115px;
+    height: 48px;
+    padding: 11px 14px 10px 15px;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    flex-shrink: 0;
+    background: #262b30;   
+    .phone-control{  
+        display: flex;
+        flex-direction: column;
+        gap: 4px;                      
+        .top-text {
+            display: flex;
+            align-items: center;
+            color: $gray5;
+            font-size: 11px;
+            line-height: 12px;
+            margin-top: -3px;
+            font-weight: 400;
+            pointer-events: none;
+        }                            
+        .pc-select-box{
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            width: 100%;
+            .pc-select-box-left{
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                .telflagform{
+                    position: relative;
+                    width: 10px;
+                    height: 10px;
+                }
+                span{
+                    color: $body-text-color;
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 16px;
+                }  
+            }                                                      
+            .pc-select-box-right{
+                .icon-select-down{
+                    display: flex;
+                    align-items: center;
+                    width: 7.506px;
+                    height: 4.105px;
+                    stroke:$body-text-color;
+                }
+            }  
+        }   
+    }
+}
+.input-user-tel{
+    width: 207px;
+}
+}
+/// new checked
+
+// Checkbox
+.form-check{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    .checkbox-container {
+        display: flex;
+        align-items: center;
+        position: relative;
+        cursor: pointer;
+        font-size: 16px;      
+        input[type="checkbox"] {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+        }      
+        .checkmark {
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          top: 0;
+          left: 0;
+          height: 16px;
+          width: 16px;
+          background-color: transparent;
+          border: 0.12rem solid $gray2;
+          margin: 5px;      
+          &:hover {
+            background-color: $content-bg-color;
+          }      
+          &:after {
+            content: "";
+            position: absolute;
+            display: none;
+          }
+        }      
+        input[type="checkbox"]:checked + .checkmark {
+          background-color: $them-color;
+          border: 0.12rem solid $them-color;      
+          &:after {
+            display: block;
+            left: 4px;
+            top: 0px;
+            width: 5px;
+            height: 12px;
+            border: solid $content-bg-color;
+            border-width: 0 3px 3px 0;
+            transform: rotate(45deg);
+          }
+        }        
+        .form-check-text{
+            color: #AFB3B5;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1;
+            margin-left: 5px;
+        }
+    }
+}
+
+// Radio
+.form-radio{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  .radio-container {
+      display: flex;
+      align-items: center;
+      position: relative;
+      cursor: pointer;
+      font-size: 16px;      
+      input[type="radio"] {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+      }      
+      .radiomark {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        left: 0;
+        height: 14px;
+        width: 14px;
+        border-radius: 20px;
+        background-color: transparent;
+        border: 0.12rem solid #50575B;
+        margin: 5px;      
+        &:hover {
+          background-color: $content-bg-color;
+        }      
+        &:after {
+          content: "";
+          position: absolute;
+          display: none;
+        }
+      }      
+      input[type="radio"]:checked + .radiomark {
+        border: 5px solid $them-color;      
+        &:after {
+          display: block;
+        }
+      }        
+      .form-radio-text{
+          color: #AFB3B5;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 1;
+          margin-left: 5px;
+      }
+  }
+}

@@ -1,0 +1,91 @@
+// Directories - Local
+$dir-base: '../../';
+$dir-frontend: $dir-base + 'frontend/';
+$dir-fonts: $dir-frontend + 'fonts/';
+$dir-images: $dir-frontend + 'images/';
+$dir-uploads: $dir-base + 'uploads/';
+
+// Font
+$font-face1: Inter;
+$font-face2: null;
+$font-face3: icomoon;
+$font-icon: null;
+$font0: sans-serif;
+$font1: $font-face1, $font0;
+$font2: $font-face2, $font0;
+
+// Colors
+$primary: #ff6600;
+$blue: #2027d7;
+$gray: #cac6c6;
+$light: #f6f3f2;
+$dark: #00070E;
+$white: #ffffff;
+$black: #000;
+$green: #58933c;
+$green2: #2EBD59;
+$coral: #df4826;
+$accent: #375dbe;
+$gray2: #AFB3B5;
+$gray3: #958e8d;
+$gray4: #e4e1e0;
+$gray5: #959C9F;
+$gray-dark1:#1D2224;
+$gold: #ad7828;
+$info: #ecf8e5;
+$warning: #ffe1e1;
+
+//Thems Color Settings
+$them-color: #4AC6E9;
+$content-bg-color: #081018;
+$them-dark-color-1: #05141E;
+$them-dark-color-2: #262B30;
+$them-dark-color-3: #030D15;
+
+$body-bg-color: #00070E;
+$body-text-color: #E9E9E9;
+$custom-border-color: #001327;
+
+$btn-dark-light-color: #fff;
+$btn-dark-light-bg-color: #1a1818;
+$btn-dark-light-border-color: #1a1818;
+
+// Spacing
+$space0: 0;
+$space1: 5px;
+$space2: 10px;
+$space3: 15px;
+$space4: 20px;
+$space5: 25px;
+$space6: 30px;
+$space7: 40px;
+$space8: 50px;
+$space9: 60px;
+$space70: 70px;
+$space90: 90px;
+$space100: 100px;
+$space120: 120px;
+
+$space-s-e: 32px; // "start + end" total padding
+
+// Breakpoints
+$breakpoint-md: 667px;
+$breakpoint-lg: 1025px;
+
+// Containers
+$container-sm: 540px;
+$container-md: 720px;
+$container-lg: 1200px;
+$container-xl: 1200px;
+$container-xxl: 1200px;
+
+//MISC
+$bg-loading: url(#{$dir-images + 'loading.gif'}) center center/32px no-repeat
+  rgba(
+    $color: #ccc,
+    $alpha: 0.5,
+  );
+$site-header-height: 80px;
+$site-header-height-mini: 65px;
+
+$site-header-height-lg: 150px;

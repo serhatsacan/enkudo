@@ -1,0 +1,48 @@
+.lb-top.bg-dark-them-2
+    .login-user-box
+        .login-user-icon
+            +icon("profil").stroke-icon
+        .d-block
+            span *******5555
+            a.login-user-btn(href="/")
+                span Log Out
+
+.lb-bottom.bg-dark-them-2
+    .lb-menu
+        a.lb-item(class=ProfileActive href="account-profile.html")
+            .lb-item-left
+                +icon("profil").stroke-icon
+                span Profile
+            .lb-item-right
+                +icon("ArrowRight")
+        a.lb-item(class=SubscriptionsActive href="account-subscriptions.html")
+            .lb-item-left
+                +icon("sub").stroke-icon
+                span Subscriptions
+            .lb-item-right                                        
+                +icon("ArrowRight")
+        a.lb-item(class=MyFavorietsActive href="account-favoriets.html")
+            .lb-item-left
+                +icon("fav").stroke-icon
+                span My Favoriets
+            .lb-item-right                                        
+                +icon("ArrowRight")
+        a.lb-item(class=RatingsReviewsActive href="account-reviews.html")
+            .lb-item-left
+                +icon("rating")
+                span Ratings & Reviews
+            .lb-item-right                                        
+                +icon("ArrowRight")
+        a.lb-item(class=NotifictionsActive href="account-notification.html")
+            .lb-item-left
+                +icon("notification")
+                span Notifictions
+            .lb-item-right                                        
+                +icon("ArrowRight")
+        a.lb-item(class=SettingsActive href="setting-notification.html")
+            .lb-item-left
+                +icon("user-setting")
+                span Settings
+            .lb-item-right                                        
+                +icon("ArrowRight")
+        

@@ -1,0 +1,551 @@
+extends layouts/default.pug
+
+block prepend head
+    - var pageTitle = "Enkudo"
+    - var pageDescription = "Search Result sayfası, Enkudo"
+    - var pageName = "search-result"
+    - var pageClass = "page page-search-result"
+
+block content
+    .breadcrumb-list-top
+        .container-fluid.px-20.px-lg-60
+            +breadcrumb(["Home", "index.html"],["Search Results", "search-result.html"])
+
+    section.page-section.overflow-hidden.product-list.product-categories
+        .container-fluid.px-0.px-lg-60
+            .product-head-title.mt-30.mb-40
+                h3 Show Results for “Need” 
+                span 139 services 
+
+        .container-fluid.px-15.px-lg-60
+            .row.g-0
+                .col-12.col-lg-4
+                    include includes/filter-left-search
+
+                .col-12.col-lg-8
+                    .ems-data-filter
+                        include includes/sortby-left
+
+                        .ems-data-filter-content
+                            .row.product-slider.g-15
+                                .col-6.col-lg-4.product-box(data-filters="Recommended")
+                                    .card.card-prd.d-flex.flex-column.justify-content-end
+                                        .card-media.position-relative
+                                            +picture('ratio ratio-1x1', lazy="true", dirFrontend + 'images/product/img-1.png', dirFrontend + 'images/product/img-1.png', dirFrontend + 'images/product/img-1.png')(class="w-100 img-fluid", alt="slide 1")
+                                        .card-body.d-flex.flex-column.justify-content-end
+                                            .card-body-title-box.d-flex.justify-content-between
+                                                .card-body-title.d-flex.flex-column.justify-content-start
+                                                    p.card-title.m-0 Spotify
+                                                    span.card-subtitle All in One
+                                                    div.card-stars-box.card-stars-box-3
+                                                        +icon("rate").rateicon-1
+                                                        +icon("rate").rateicon-2
+                                                        +icon("rate").rateicon-3
+                                                        +icon("rate").rateicon-4
+                                                        +icon("rate").rateicon-5
+                                                        span.card-stars-box-text 256 Reviews
+                                                a.btn-fav.stretched-link-over(href="javascript:void(0);" aria-label="Fav")
+                                                    +icon('fav').stroke-icon
+                                            
+                                            p.cart-content-text.m-0 it operates the over-the-top subscription video on-demand service.. 
+                                            a.cart-content-link(href="product-detail.html") See More 
+                                        .card-footer.d-flex.align-items-center.justify-content-between
+                                            .card-price.d-flex.flex-column.justify-content-start
+                                                span.card-price-last.fs-14.fs-lg-16.fw-600.text-white $9.90
+                                                
+                                            a.btn.btn-them-1.btn-md(href="product-detail.html")
+                                                span Learn More
+                                
+                                .col-6.col-lg-4.product-box(data-filters="MostPopular")
+                                    .card.card-prd.d-flex.flex-column.justify-content-end
+                                        .card-media.position-relative
+                                            +picture('ratio ratio-1x1', lazy="true", dirFrontend + 'images/product/img-2.png', dirFrontend + 'images/product/img-2.png', dirFrontend + 'images/product/img-2.png')(class="w-100 img-fluid", alt="slide 1")
+                                        .card-body.d-flex.flex-column.justify-content-end
+                                            .card-body-title-box.d-flex.justify-content-between
+                                                .card-body-title.d-flex.flex-column.justify-content-start
+                                                    p.card-title.m-0 Netflix
+                                                    span.card-subtitle All in One
+                                                    div.card-stars-box.card-stars-box-3
+                                                        +icon("rate").rateicon-1
+                                                        +icon("rate").rateicon-2
+                                                        +icon("rate").rateicon-3
+                                                        +icon("rate").rateicon-4
+                                                        +icon("rate").rateicon-5
+                                                        span.card-stars-box-text 256 Reviews
+                                                a.btn-fav.stretched-link-over.selected(href="javascript:void(0);" aria-label="Fav")
+                                                    +icon('fav').stroke-icon
+                                            
+                                            p.cart-content-text.m-0 it operates the over-the-top subscription video on-demand service.. 
+                                            a.cart-content-link(href="product-detail.html") See More 
+                                        .card-footer.d-flex.align-items-center.justify-content-between
+                                            .card-price.d-flex.flex-column.justify-content-start
+                                                span.discount-rate.fs-12.fs-lg-14.fw-400 Starting from
+                                                span.card-price-last.fs-14.fs-lg-16.fw-600.text-white $9.90
+                                                
+                                            a.btn.btn-them-1.btn-md(href="product-detail.html")
+                                                span Learn More
+                                
+                                .col-6.col-lg-4.product-box(data-filters="TopSelling")
+                                    .card.card-prd.d-flex.flex-column.justify-content-end
+                                        .card-media.position-relative
+                                            +picture('ratio ratio-1x1', lazy="true", dirFrontend + 'images/product/img-3.png', dirFrontend + 'images/product/img-3.png', dirFrontend + 'images/product/img-3.png')(class="w-100 img-fluid", alt="slide 1")
+                                        .card-body.d-flex.flex-column.justify-content-end
+                                            .card-body-title-box.d-flex.justify-content-between
+                                                .card-body-title.d-flex.flex-column.justify-content-start
+                                                    p.card-title.m-0 Netflix
+                                                    span.card-subtitle All in One
+                                                a.btn-fav.stretched-link-over(href="javascript:void(0);" aria-label="Fav")
+                                                    +icon('fav').stroke-icon
+                                            
+                                            p.cart-content-text.m-0 it operates the over-the-top subscription video on-demand service.. 
+                                            a.cart-content-link(href="product-detail.html") See More 
+                                        .card-footer.d-flex.align-items-center.justify-content-between
+                                            .card-price.d-flex.flex-column.justify-content-start
+                                                span.discount-rate.fs-12.fs-lg-14.fw-400 Starting from
+                                                span.card-price-last.fs-14.fs-lg-16.fw-600.text-white $9.90
+                                                
+                                            a.btn.btn-them-1.btn-md(href="product-detail.html")
+                                                span Learn More
+                                
+                                .col-6.col-lg-4.product-box(data-filters="HighestRated")
+                                    .card.card-prd.d-flex.flex-column.justify-content-end
+                                        .card-media.position-relative
+                                            +picture('ratio ratio-1x1', lazy="true", dirFrontend + 'images/product/img-4.png', dirFrontend + 'images/product/img-4.png', dirFrontend + 'images/product/img-4.png')(class="w-100 img-fluid", alt="slide 1")
+                                        .card-body.d-flex.flex-column.justify-content-end
+                                            .card-body-title-box.d-flex.justify-content-between
+                                                .card-body-title.d-flex.flex-column.justify-content-start
+                                                    p.card-title.m-0 Busuu
+                                                    span.card-subtitle All in One
+                                                    div.card-stars-box.card-stars-box-3
+                                                        +icon("rate").rateicon-1
+                                                        +icon("rate").rateicon-2
+                                                        +icon("rate").rateicon-3
+                                                        +icon("rate").rateicon-4
+                                                        +icon("rate").rateicon-5
+                                                        span.card-stars-box-text 256 Reviews
+                                                a.btn-fav.stretched-link-over(href="javascript:void(0);" aria-label="Fav")
+                                                    +icon('fav').stroke-icon
+                                            
+                                            p.cart-content-text.m-0 it operates the over-the-top subscription video on-demand service.. 
+                                            a.cart-content-link(href="product-detail.html") See More 
+                                        .card-footer.d-flex.align-items-center.justify-content-between
+                                            .card-price.d-flex.flex-column.justify-content-start
+                                                span.discount-rate.fs-12.fs-lg-14.fw-400 Only
+                                                span.card-price-last.fs-14.fs-lg-16.fw-600.text-white $9.90
+                                                
+                                            a.btn.btn-them-1.btn-md(href="product-detail.html")
+                                                span Learn More
+
+                                .col-6.col-lg-4.product-box(data-filters="LowestPrice")
+                                    .card.card-prd.d-flex.flex-column.justify-content-end
+                                        .card-media.position-relative
+                                            +picture('ratio ratio-1x1', lazy="true", dirFrontend + 'images/product/img-5.png', dirFrontend + 'images/product/img-5.png', dirFrontend + 'images/product/img-5.png')(class="w-100 img-fluid", alt="slide 1")
+                                        .card-body.d-flex.flex-column.justify-content-end
+                                            .card-body-title-box.d-flex.justify-content-between
+                                                .card-body-title.d-flex.flex-column.justify-content-start
+                                                    p.card-title.m-0 Spotify
+                                                    span.card-subtitle All in One
+                                                    div.card-stars-box.card-stars-box-3
+                                                        +icon("rate").rateicon-1
+                                                        +icon("rate").rateicon-2
+                                                        +icon("rate").rateicon-3
+                                                        +icon("rate").rateicon-4
+                                                        +icon("rate").rateicon-5
+                                                        span.card-stars-box-text 256 Reviews
+                                                a.btn-fav.stretched-link-over(href="javascript:void(0);" aria-label="Fav")
+                                                    +icon('fav').stroke-icon
+                                            
+                                            p.cart-content-text.m-0 it operates the over-the-top subscription video on-demand service.. 
+                                            a.cart-content-link(href="product-detail.html") See More 
+                                        .card-footer.d-flex.align-items-center.justify-content-between
+                                            .card-price.d-flex.flex-column.justify-content-start
+                                                span.card-price-last.fs-14.fs-lg-16.fw-600.text-white $9.90
+                                                
+                                            a.btn.btn-them-1.btn-md(href="product-detail.html")
+                                                span Learn More
+                                
+                                .col-6.col-lg-4.product-box(data-filters="Recommended")
+                                    .card.card-prd.d-flex.flex-column.justify-content-end
+                                        .card-media.position-relative
+                                            +picture('ratio ratio-1x1', lazy="true", dirFrontend + 'images/product/img-6.png', dirFrontend + 'images/product/img-6.png', dirFrontend + 'images/product/img-6.png')(class="w-100 img-fluid", alt="slide 1")
+                                        .card-body.d-flex.flex-column.justify-content-end
+                                            .card-body-title-box.d-flex.justify-content-between
+                                                .card-body-title.d-flex.flex-column.justify-content-start
+                                                    p.card-title.m-0 Netflix
+                                                    span.card-subtitle All in One
+                                                    div.card-stars-box.card-stars-box-3
+                                                        +icon("rate").rateicon-1
+                                                        +icon("rate").rateicon-2
+                                                        +icon("rate").rateicon-3
+                                                        +icon("rate").rateicon-4
+                                                        +icon("rate").rateicon-5
+                                                        span.card-stars-box-text 256 Reviews
+                                                a.btn-fav.stretched-link-over(href="javascript:void(0);" aria-label="Fav")
+                                                    +icon('fav').stroke-icon
+                                            
+                                            p.cart-content-text.m-0 it operates the over-the-top subscription video on-demand service.. 
+                                            a.cart-content-link(href="product-detail.html") See More 
+                                        .card-footer.d-flex.align-items-center.justify-content-between
+                                            .card-price.d-flex.flex-column.justify-content-start
+                                                span.discount-rate.fs-12.fs-lg-14.fw-400 Starting from
+                                                span.card-price-last.fs-14.fs-lg-16.fw-600.text-white $9.90
+                                                
+                                            a.btn.btn-them-1.btn-md(href="product-detail.html")
+                                                span Learn More
+                                
+                                .col-6.col-lg-4.product-box(data-filters="MostPopular")
+                                    .card.card-prd.d-flex.flex-column.justify-content-end
+                                        .card-media.position-relative
+                                            +picture('ratio ratio-1x1', lazy="true", dirFrontend + 'images/product/img-7.png', dirFrontend + 'images/product/img-7.png', dirFrontend + 'images/product/img-7.png')(class="w-100 img-fluid", alt="slide 1")
+                                        .card-body.d-flex.flex-column.justify-content-end
+                                            .card-body-title-box.d-flex.justify-content-between
+                                                .card-body-title.d-flex.flex-column.justify-content-start
+                                                    p.card-title.m-0 Netflix
+                                                    span.card-subtitle All in One
+                                                a.btn-fav.stretched-link-over(href="javascript:void(0);" aria-label="Fav")
+                                                    +icon('fav').stroke-icon
+                                            
+                                            p.cart-content-text.m-0 it operates the over-the-top subscription video on-demand service.. 
+                                            a.cart-content-link(href="product-detail.html") See More 
+                                        .card-footer.d-flex.align-items-center.justify-content-between
+                                            .card-price.d-flex.flex-column.justify-content-start
+                                                span.discount-rate.fs-12.fs-lg-14.fw-400 Starting from
+                                                span.card-price-last.fs-14.fs-lg-16.fw-600.text-white $9.90
+                                                
+                                            a.btn.btn-them-1.btn-md(href="product-detail.html")
+                                                span Learn More
+                                
+                                .col-6.col-lg-4.product-box(data-filters="TopSelling")
+                                    .card.card-prd.d-flex.flex-column.justify-content-end
+                                        .card-media.position-relative
+                                            +picture('ratio ratio-1x1', lazy="true", dirFrontend + 'images/product/img-8.png', dirFrontend + 'images/product/img-8.png', dirFrontend + 'images/product/img-8.png')(class="w-100 img-fluid", alt="slide 1")
+                                        .card-body.d-flex.flex-column.justify-content-end
+                                            .card-body-title-box.d-flex.justify-content-between
+                                                .card-body-title.d-flex.flex-column.justify-content-start
+                                                    p.card-title.m-0 Busuu
+                                                    span.card-subtitle All in One
+                                                    div.card-stars-box.card-stars-box-3
+                                                        +icon("rate").rateicon-1
+                                                        +icon("rate").rateicon-2
+                                                        +icon("rate").rateicon-3
+                                                        +icon("rate").rateicon-4
+                                                        +icon("rate").rateicon-5
+                                                        span.card-stars-box-text 256 Reviews
+                                                a.btn-fav.stretched-link-over(href="javascript:void(0);" aria-label="Fav")
+                                                    +icon('fav').stroke-icon
+                                            
+                                            p.cart-content-text.m-0 it operates the over-the-top subscription video on-demand service.. 
+                                            a.cart-content-link(href="product-detail.html") See More 
+                                        .card-footer.d-flex.align-items-center.justify-content-between
+                                            .card-price.d-flex.flex-column.justify-content-start
+                                                span.discount-rate.fs-12.fs-lg-14.fw-400 Only
+                                                span.card-price-last.fs-14.fs-lg-16.fw-600.text-white $9.90
+                                                
+                                            a.btn.btn-them-1.btn-md(href="product-detail.html")
+                                                span Learn More
+                                                
+                                .col-6.col-lg-4.product-box(data-filters="Recommended")
+                                    .card.card-prd.d-flex.flex-column.justify-content-end
+                                        .card-media.position-relative
+                                            +picture('ratio ratio-1x1', lazy="true", dirFrontend + 'images/product/img-1.png', dirFrontend + 'images/product/img-1.png', dirFrontend + 'images/product/img-1.png')(class="w-100 img-fluid", alt="slide 1")
+                                        .card-body.d-flex.flex-column.justify-content-end
+                                            .card-body-title-box.d-flex.justify-content-between
+                                                .card-body-title.d-flex.flex-column.justify-content-start
+                                                    p.card-title.m-0 Spotify
+                                                    span.card-subtitle All in One
+                                                    div.card-stars-box.card-stars-box-3
+                                                        +icon("rate").rateicon-1
+                                                        +icon("rate").rateicon-2
+                                                        +icon("rate").rateicon-3
+                                                        +icon("rate").rateicon-4
+                                                        +icon("rate").rateicon-5
+                                                        span.card-stars-box-text 256 Reviews
+                                                a.btn-fav.stretched-link-over(href="javascript:void(0);" aria-label="Fav")
+                                                    +icon('fav').stroke-icon
+                                            
+                                            p.cart-content-text.m-0 it operates the over-the-top subscription video on-demand service.. 
+                                            a.cart-content-link(href="product-detail.html") See More 
+                                        .card-footer.d-flex.align-items-center.justify-content-between
+                                            .card-price.d-flex.flex-column.justify-content-start
+                                                span.card-price-last.fs-14.fs-lg-16.fw-600.text-white $9.90
+                                                
+                                            a.btn.btn-them-1.btn-md(href="product-detail.html")
+                                                span Learn More
+                                
+                                .col-6.col-lg-4.product-box(data-filters="MostPopular")
+                                    .card.card-prd.d-flex.flex-column.justify-content-end
+                                        .card-media.position-relative
+                                            +picture('ratio ratio-1x1', lazy="true", dirFrontend + 'images/product/img-2.png', dirFrontend + 'images/product/img-2.png', dirFrontend + 'images/product/img-2.png')(class="w-100 img-fluid", alt="slide 1")
+                                        .card-body.d-flex.flex-column.justify-content-end
+                                            .card-body-title-box.d-flex.justify-content-between
+                                                .card-body-title.d-flex.flex-column.justify-content-start
+                                                    p.card-title.m-0 Netflix
+                                                    span.card-subtitle All in One
+                                                    div.card-stars-box.card-stars-box-3
+                                                        +icon("rate").rateicon-1
+                                                        +icon("rate").rateicon-2
+                                                        +icon("rate").rateicon-3
+                                                        +icon("rate").rateicon-4
+                                                        +icon("rate").rateicon-5
+                                                        span.card-stars-box-text 256 Reviews
+                                                a.btn-fav.stretched-link-over(href="javascript:void(0);" aria-label="Fav")
+                                                    +icon('fav').stroke-icon
+                                            
+                                            p.cart-content-text.m-0 it operates the over-the-top subscription video on-demand service.. 
+                                            a.cart-content-link(href="product-detail.html") See More 
+                                        .card-footer.d-flex.align-items-center.justify-content-between
+                                            .card-price.d-flex.flex-column.justify-content-start
+                                                span.discount-rate.fs-12.fs-lg-14.fw-400 Starting from
+                                                span.card-price-last.fs-14.fs-lg-16.fw-600.text-white $9.90
+                                                
+                                            a.btn.btn-them-1.btn-md(href="product-detail.html")
+                                                span Learn More
+                                
+                                .col-6.col-lg-4.product-box(data-filters="TopSelling")
+                                    .card.card-prd.d-flex.flex-column.justify-content-end
+                                        .card-media.position-relative
+                                            +picture('ratio ratio-1x1', lazy="true", dirFrontend + 'images/product/img-3.png', dirFrontend + 'images/product/img-3.png', dirFrontend + 'images/product/img-3.png')(class="w-100 img-fluid", alt="slide 1")
+                                        .card-body.d-flex.flex-column.justify-content-end
+                                            .card-body-title-box.d-flex.justify-content-between
+                                                .card-body-title.d-flex.flex-column.justify-content-start
+                                                    p.card-title.m-0 Netflix
+                                                    span.card-subtitle All in One
+                                                a.btn-fav.stretched-link-over(href="javascript:void(0);" aria-label="Fav")
+                                                    +icon('fav').stroke-icon
+                                            
+                                            p.cart-content-text.m-0 it operates the over-the-top subscription video on-demand service.. 
+                                            a.cart-content-link(href="product-detail.html") See More 
+                                        .card-footer.d-flex.align-items-center.justify-content-between
+                                            .card-price.d-flex.flex-column.justify-content-start
+                                                span.discount-rate.fs-12.fs-lg-14.fw-400 Starting from
+                                                span.card-price-last.fs-14.fs-lg-16.fw-600.text-white $9.90
+                                                
+                                            a.btn.btn-them-1.btn-md(href="product-detail.html")
+                                                span Learn More
+                                
+                                .col-6.col-lg-4.product-box(data-filters="HighestRated")
+                                    .card.card-prd.d-flex.flex-column.justify-content-end
+                                        .card-media.position-relative
+                                            +picture('ratio ratio-1x1', lazy="true", dirFrontend + 'images/product/img-4.png', dirFrontend + 'images/product/img-4.png', dirFrontend + 'images/product/img-4.png')(class="w-100 img-fluid", alt="slide 1")
+                                        .card-body.d-flex.flex-column.justify-content-end
+                                            .card-body-title-box.d-flex.justify-content-between
+                                                .card-body-title.d-flex.flex-column.justify-content-start
+                                                    p.card-title.m-0 Busuu
+                                                    span.card-subtitle All in One
+                                                    div.card-stars-box.card-stars-box-3
+                                                        +icon("rate").rateicon-1
+                                                        +icon("rate").rateicon-2
+                                                        +icon("rate").rateicon-3
+                                                        +icon("rate").rateicon-4
+                                                        +icon("rate").rateicon-5
+                                                        span.card-stars-box-text 256 Reviews
+                                                a.btn-fav.stretched-link-over(href="javascript:void(0);" aria-label="Fav")
+                                                    +icon('fav').stroke-icon
+                                            
+                                            p.cart-content-text.m-0 it operates the over-the-top subscription video on-demand service.. 
+                                            a.cart-content-link(href="product-detail.html") See More 
+                                        .card-footer.d-flex.align-items-center.justify-content-between
+                                            .card-price.d-flex.flex-column.justify-content-start
+                                                span.discount-rate.fs-12.fs-lg-14.fw-400 Only
+                                                span.card-price-last.fs-14.fs-lg-16.fw-600.text-white $9.90
+                                                
+                                            a.btn.btn-them-1.btn-md(href="product-detail.html")
+                                                span Learn More
+
+                                .col-6.col-lg-4.product-box(data-filters="LowestPrice")
+                                    .card.card-prd.d-flex.flex-column.justify-content-end
+                                        .card-media.position-relative
+                                            +picture('ratio ratio-1x1', lazy="true", dirFrontend + 'images/product/img-5.png', dirFrontend + 'images/product/img-5.png', dirFrontend + 'images/product/img-5.png')(class="w-100 img-fluid", alt="slide 1")
+                                        .card-body.d-flex.flex-column.justify-content-end
+                                            .card-body-title-box.d-flex.justify-content-between
+                                                .card-body-title.d-flex.flex-column.justify-content-start
+                                                    p.card-title.m-0 Spotify
+                                                    span.card-subtitle All in One
+                                                    div.card-stars-box.card-stars-box-3
+                                                        +icon("rate").rateicon-1
+                                                        +icon("rate").rateicon-2
+                                                        +icon("rate").rateicon-3
+                                                        +icon("rate").rateicon-4
+                                                        +icon("rate").rateicon-5
+                                                        span.card-stars-box-text 256 Reviews
+                                                a.btn-fav.stretched-link-over(href="javascript:void(0);" aria-label="Fav")
+                                                    +icon('fav').stroke-icon
+                                            
+                                            p.cart-content-text.m-0 it operates the over-the-top subscription video on-demand service.. 
+                                            a.cart-content-link(href="product-detail.html") See More 
+                                        .card-footer.d-flex.align-items-center.justify-content-between
+                                            .card-price.d-flex.flex-column.justify-content-start
+                                                span.card-price-last.fs-14.fs-lg-16.fw-600.text-white $9.90
+                                                
+                                            a.btn.btn-them-1.btn-md(href="product-detail.html")
+                                                span Learn More
+                                
+                                .col-6.col-lg-4.product-box(data-filters="Recommended")
+                                    .card.card-prd.d-flex.flex-column.justify-content-end
+                                        .card-media.position-relative
+                                            +picture('ratio ratio-1x1', lazy="true", dirFrontend + 'images/product/img-6.png', dirFrontend + 'images/product/img-6.png', dirFrontend + 'images/product/img-6.png')(class="w-100 img-fluid", alt="slide 1")
+                                        .card-body.d-flex.flex-column.justify-content-end
+                                            .card-body-title-box.d-flex.justify-content-between
+                                                .card-body-title.d-flex.flex-column.justify-content-start
+                                                    p.card-title.m-0 Netflix
+                                                    span.card-subtitle All in One
+                                                    div.card-stars-box.card-stars-box-3
+                                                        +icon("rate").rateicon-1
+                                                        +icon("rate").rateicon-2
+                                                        +icon("rate").rateicon-3
+                                                        +icon("rate").rateicon-4
+                                                        +icon("rate").rateicon-5
+                                                        span.card-stars-box-text 256 Reviews
+                                                a.btn-fav.stretched-link-over(href="javascript:void(0);" aria-label="Fav")
+                                                    +icon('fav').stroke-icon
+                                            
+                                            p.cart-content-text.m-0 it operates the over-the-top subscription video on-demand service.. 
+                                            a.cart-content-link(href="product-detail.html") See More 
+                                        .card-footer.d-flex.align-items-center.justify-content-between
+                                            .card-price.d-flex.flex-column.justify-content-start
+                                                span.discount-rate.fs-12.fs-lg-14.fw-400 Starting from
+                                                span.card-price-last.fs-14.fs-lg-16.fw-600.text-white $9.90
+                                                
+                                            a.btn.btn-them-1.btn-md(href="product-detail.html")
+                                                span Learn More
+                                
+                                .col-6.col-lg-4.product-box(data-filters="MostPopular")
+                                    .card.card-prd.d-flex.flex-column.justify-content-end
+                                        .card-media.position-relative
+                                            +picture('ratio ratio-1x1', lazy="true", dirFrontend + 'images/product/img-7.png', dirFrontend + 'images/product/img-7.png', dirFrontend + 'images/product/img-7.png')(class="w-100 img-fluid", alt="slide 1")
+                                        .card-body.d-flex.flex-column.justify-content-end
+                                            .card-body-title-box.d-flex.justify-content-between
+                                                .card-body-title.d-flex.flex-column.justify-content-start
+                                                    p.card-title.m-0 Netflix
+                                                    span.card-subtitle All in One
+                                                a.btn-fav.stretched-link-over(href="javascript:void(0);" aria-label="Fav")
+                                                    +icon('fav').stroke-icon
+                                            
+                                            p.cart-content-text.m-0 it operates the over-the-top subscription video on-demand service.. 
+                                            a.cart-content-link(href="product-detail.html") See More 
+                                        .card-footer.d-flex.align-items-center.justify-content-between
+                                            .card-price.d-flex.flex-column.justify-content-start
+                                                span.discount-rate.fs-12.fs-lg-14.fw-400 Starting from
+                                                span.card-price-last.fs-14.fs-lg-16.fw-600.text-white $9.90
+                                                
+                                            a.btn.btn-them-1.btn-md(href="product-detail.html")
+                                                span Learn More
+                                
+                                .col-6.col-lg-4.product-box(data-filters="TopSelling")
+                                    .card.card-prd.d-flex.flex-column.justify-content-end
+                                        .card-media.position-relative
+                                            +picture('ratio ratio-1x1', lazy="true", dirFrontend + 'images/product/img-8.png', dirFrontend + 'images/product/img-8.png', dirFrontend + 'images/product/img-8.png')(class="w-100 img-fluid", alt="slide 1")
+                                        .card-body.d-flex.flex-column.justify-content-end
+                                            .card-body-title-box.d-flex.justify-content-between
+                                                .card-body-title.d-flex.flex-column.justify-content-start
+                                                    p.card-title.m-0 Busuu
+                                                    span.card-subtitle All in One
+                                                    div.card-stars-box.card-stars-box-3
+                                                        +icon("rate").rateicon-1
+                                                        +icon("rate").rateicon-2
+                                                        +icon("rate").rateicon-3
+                                                        +icon("rate").rateicon-4
+                                                        +icon("rate").rateicon-5
+                                                        span.card-stars-box-text 256 Reviews
+                                                a.btn-fav.stretched-link-over(href="javascript:void(0);" aria-label="Fav")
+                                                    +icon('fav').stroke-icon
+                                            
+                                            p.cart-content-text.m-0 it operates the over-the-top subscription video on-demand service.. 
+                                            a.cart-content-link(href="product-detail.html") See More 
+                                        .card-footer.d-flex.align-items-center.justify-content-between
+                                            .card-price.d-flex.flex-column.justify-content-start
+                                                span.discount-rate.fs-12.fs-lg-14.fw-400 Only
+                                                span.card-price-last.fs-14.fs-lg-16.fw-600.text-white $9.90
+                                                
+                                            a.btn.btn-them-1.btn-md(href="product-detail.html")
+                                                span Learn More
+               
+                                .col-6.col-lg-4.product-box(data-filters="Recommended")
+                                    .card.card-prd.d-flex.flex-column.justify-content-end
+                                        .card-media.position-relative
+                                            +picture('ratio ratio-1x1', lazy="true", dirFrontend + 'images/product/img-1.png', dirFrontend + 'images/product/img-1.png', dirFrontend + 'images/product/img-1.png')(class="w-100 img-fluid", alt="slide 1")
+                                        .card-body.d-flex.flex-column.justify-content-end
+                                            .card-body-title-box.d-flex.justify-content-between
+                                                .card-body-title.d-flex.flex-column.justify-content-start
+                                                    p.card-title.m-0 Spotify
+                                                    span.card-subtitle All in One
+                                                    div.card-stars-box.card-stars-box-3
+                                                        +icon("rate").rateicon-1
+                                                        +icon("rate").rateicon-2
+                                                        +icon("rate").rateicon-3
+                                                        +icon("rate").rateicon-4
+                                                        +icon("rate").rateicon-5
+                                                        span.card-stars-box-text 256 Reviews
+                                                a.btn-fav.stretched-link-over(href="javascript:void(0);" aria-label="Fav")
+                                                    +icon('fav').stroke-icon
+                                            
+                                            p.cart-content-text.m-0 it operates the over-the-top subscription video on-demand service.. 
+                                            a.cart-content-link(href="product-detail.html") See More 
+                                        .card-footer.d-flex.align-items-center.justify-content-between
+                                            .card-price.d-flex.flex-column.justify-content-start
+                                                span.card-price-last.fs-14.fs-lg-16.fw-600.text-white $9.90
+                                                
+                                            a.btn.btn-them-1.btn-md(href="product-detail.html")
+                                                span Learn More
+                                
+                                .col-6.col-lg-4.product-box(data-filters="MostPopular")
+                                    .card.card-prd.d-flex.flex-column.justify-content-end
+                                        .card-media.position-relative
+                                            +picture('ratio ratio-1x1', lazy="true", dirFrontend + 'images/product/img-2.png', dirFrontend + 'images/product/img-2.png', dirFrontend + 'images/product/img-2.png')(class="w-100 img-fluid", alt="slide 1")
+                                        .card-body.d-flex.flex-column.justify-content-end
+                                            .card-body-title-box.d-flex.justify-content-between
+                                                .card-body-title.d-flex.flex-column.justify-content-start
+                                                    p.card-title.m-0 Netflix
+                                                    span.card-subtitle All in One
+                                                    div.card-stars-box.card-stars-box-3
+                                                        +icon("rate").rateicon-1
+                                                        +icon("rate").rateicon-2
+                                                        +icon("rate").rateicon-3
+                                                        +icon("rate").rateicon-4
+                                                        +icon("rate").rateicon-5
+                                                        span.card-stars-box-text 256 Reviews
+                                                a.btn-fav.stretched-link-over(href="javascript:void(0);" aria-label="Fav")
+                                                    +icon('fav').stroke-icon
+                                            
+                                            p.cart-content-text.m-0 it operates the over-the-top subscription video on-demand service.. 
+                                            a.cart-content-link(href="product-detail.html") See More 
+                                        .card-footer.d-flex.align-items-center.justify-content-between
+                                            .card-price.d-flex.flex-column.justify-content-start
+                                                span.discount-rate.fs-12.fs-lg-14.fw-400 Starting from
+                                                span.card-price-last.fs-14.fs-lg-16.fw-600.text-white $9.90
+                                                
+                                            a.btn.btn-them-1.btn-md(href="product-detail.html")
+                                                span Learn More
+
+                            .row
+                                .col-12.d-flex.align-items-center.justify-content-center.mt-25.mt-lg-60.mb-40.mb-lg-120
+                                    nav(aria-label='Page navigation example')
+                                        .pagination
+                                            .page-item
+                                                a.page-link.left-icon(href='#', aria-label='Previous')
+                                                    span(aria-hidden='true')
+                                                        svg(viewBox='0 0 32 33' fill='none' xmlns='http://www.w3.org/2000/svg')
+                                                            path(fill-rule='evenodd' clip-rule='evenodd' d='M14 10.7566V12.4811C14 12.5984 14.0466 12.7087 14.1231 12.7777L17.75 16.5732L14.1231 20.3679C14.1231 20.3679 14 20.5472 14 20.6645C14 20.7818 14 22.2395 14 22.389C14 22.5385 14.138 22.6258 14.2369 22.5385C14.3357 22.4511 19.7538 17.0134 19.7538 17.0134C20.0821 16.719 20.0821 16.4903 19.7538 16.1982L14.2369 10.6095C14.138 10.5198 14 10.6072 14 10.7566Z')
+
+                                            .page-item
+                                                a.page-link.active(href='#')
+                                                    span 1
+                                            .page-item
+                                                a.page-link(href='#')
+                                                    span 2
+                                            .page-item
+                                                a.page-link(href='#')
+                                                    span 3
+                                            .page-item
+                                                a.page-link(href='#')
+                                                    span 4
+                                            .page-item
+                                                a.page-link(href='#')
+                                                    span 5
+                                            .page-item
+                                                a.page-link.right-icon(href='#', aria-label='Next')
+                                                    span(aria-hidden='true') 
+                                                        svg(viewBox='0 0 32 33' fill='none' xmlns='http://www.w3.org/2000/svg')
+                                                            path(fill-rule='evenodd' clip-rule='evenodd' d='M14 10.7566V12.4811C14 12.5984 14.0466 12.7087 14.1231 12.7777L17.75 16.5732L14.1231 20.3679C14.1231 20.3679 14 20.5472 14 20.6645C14 20.7818 14 22.2395 14 22.389C14 22.5385 14.138 22.6258 14.2369 22.5385C14.3357 22.4511 19.7538 17.0134 19.7538 17.0134C20.0821 16.719 20.0821 16.4903 19.7538 16.1982L14.2369 10.6095C14.138 10.5198 14 10.6072 14 10.7566Z')
+
+

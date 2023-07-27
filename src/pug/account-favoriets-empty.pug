@@ -1,0 +1,35 @@
+extends layouts/default.pug
+
+block prepend head
+    - var pageTitle = "Enkudo"
+    - var pageDescription = "My Favoriets Sayfası, Enkudo"
+    - var pageName = "My Favoriets"
+    - var pageClass = "page page-account-favoriets"
+    - var MyFavorietsActive = "active"
+
+block content
+    section.account-section.mb-80
+        .container.p-0
+            .row.g-5
+                .account-box
+                    .left-box
+                        include includes/account-left-menu
+
+                    .right-box 
+                        .rb-content.bg-dark-them-2
+                            .rb-content-subscriptions
+                                .product-list.mb-40.mb-lg-0.w-100
+                                    .title-box
+                                        h4.d-none.d-lg-block My Favorites
+                                        p You can see and manage your favorite services and subscribe them. 
+                                
+                                    .mt-0.mb-0.px-15.px-lg-0
+                                        .box-empty
+                                            +icon("empty-fav").empty-icons
+                                            .title-box-empty
+                                                h4 You don't have any favorite services
+                                                p Discover hundreds of services available on Enkudo, and easily manage them here.
+                                                a.btn.btn-them-2.btn-lg.mt-70.mxw-200.w-100(href="/")
+                                                    span Discover
+                                                    +icon("ArrowRight").icon-arrow-right
+                                                        

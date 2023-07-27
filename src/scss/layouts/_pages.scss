@@ -1,0 +1,43 @@
+.page-section{
+    display: block;
+    position: relative;
+    margin-top: $site-header-height;
+    padding-top: 58px;
+    margin-bottom: 80px;
+}
+
+.notfound,
+.welcome {
+    picture {
+        height: 100vh;
+    }
+}
+.blog {
+    &-title,
+    &-subtitle {
+        @include line-clamp(2);
+    }
+    &-cat {
+        white-space: nowrap;
+    }
+}
+section{
+    &.bg-dark-them-1-sm-dark{        
+        background: $them-dark-color-1;
+    }
+    &.bg-dark-them-1{        
+        background: $them-dark-color-1;
+    }
+    .section-title{
+        font-size: 42px;
+        font-weight: 400;
+        line-height: 50px;
+    }
+}
+
+.bg-dark-them-2{
+    background: $content-bg-color;
+}
+.text-gray1{
+    color:$body-text-color;
+}

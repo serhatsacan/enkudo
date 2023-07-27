@@ -1,0 +1,49 @@
+extends layouts/default.pug
+
+block prepend head
+    - var pageTitle = "Enkudo"
+    - var pageDescription = "Subscriptions Sayfası, Enkudo"
+    - var pageName = "Subscriptions"
+    - var pageClass = "page page-account-subscriptions-empty"
+    - var SubscriptionsActive = "active"
+
+block content
+    section.account-section.mb-80
+        .container.p-0
+            .row.g-5
+                .account-box
+                    .left-box
+                        include includes/account-left-menu
+
+                    .right-box 
+                        .rb-content.bg-dark-them-2
+                            .rb-content-subscriptions
+                                .product-list.mb-40.mb-lg-0.w-100
+                                    .title-box
+                                        h4.d-none.d-lg-block Subscriptions
+                                        p You can see and manage your all subscriptions in here
+
+                                    .ems-tab
+                                        .ems-tab-header.me-3
+                                            a.nav-link.selected(href="javascript:void(0);" rel="tab-1" aria-label="Tab 1")
+                                                span All
+                                                
+                                            a.nav-link(href="javascript:void(0);" rel="tab-2" aria-label="Tab 2")
+                                                span Active
+
+                                            a.nav-link(href="javascript:void(0);" rel="tab-3" aria-label="Tab 3")
+                                                span Suspended
+
+                                            a.nav-link(href="javascript:void(0);" rel="tab-4" aria-label="Tab 4")
+                                                span Inactive
+                                
+                                    .mt-0.mb-0.px-15.px-lg-0
+                                        .box-empty
+                                            +icon("empty-sub").empty-icons
+                                            .title-box-empty
+                                                h4 You currently do not have any subscriptions.
+                                                p Discover hundreds of services available on Enkudo, and easily manage them here.
+                                                a.btn.btn-them-2.btn-lg.mt-70.mxw-200.w-100(href="/")
+                                                    span Discover                                                    
+                                                    +icon("ArrowRight").icon-arrow-right
+                                        

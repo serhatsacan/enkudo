@@ -1,0 +1,168 @@
+include ../abstracts/variables
+include ../abstracts/mixins
+
+doctype html
+html(lang=lang, dir=dir)
+    // HEAD
+    head
+        block head
+            meta(charset="UTF-8")
+            meta(http-equiv="X-UA-Compatible", content="ie=edge")
+            meta(name="viewport" content="width=device-width, initial-scale=1")
+            
+            title=pageTitle
+            meta(name="description" content=pageDescription)
+
+            link(rel="apple-touch-icon" sizes="180x180" href=dirImages + "favicon/apple-touch-icon.png")
+            link(rel="icon" type="image/png" sizes="32x32" href=dirImages + "favicon/favicon.png")
+            link(rel="icon" type="image/png" sizes="16x16" href=dirImages + "favicon/favicon.png")
+            link(rel="manifest" href="manifest-min.json")
+            link(rel="mask-icon" href=dirImages + "favicon/safari-pinned-tab.svg" color="#4AC6E9")
+            link(rel="shortcut icon" href=dirImages + "favicon/favicon.png")
+            
+            meta(name="theme-color" content="#4AC6E9")
+
+            // dns-prefetch
+            link(rel="preconnect", href="https://connect.facebook.net")
+            link(rel="dns-prefetch", href="https://connect.facebook.net")
+
+            // preload
+            link(rel="preload", href=dirFonts + "Inter/Inter-Thin.woff2", as="font", type="font/woff2" crossorigin)
+            link(rel="preload", href=dirFonts + "Inter/Inter-ExtraLight.woff2", as="font", type="font/woff2" crossorigin)
+            link(rel="preload", href=dirFonts + "Inter/Inter-Light.woff2", as="font", type="font/woff2" crossorigin)
+            link(rel="preload", href=dirFonts + "Inter/Inter-Regular.woff2", as="font", type="font/woff2" crossorigin)
+            link(rel="preload", href=dirFonts + "Inter/Inter-Medium.woff2", as="font", type="font/woff2" crossorigin)
+            link(rel="preload", href=dirFonts + "Inter/Inter-SemiBold.woff2", as="font", type="font/woff2" crossorigin)
+            link(rel="preload", href=dirFonts + "Inter/Inter-ExtraBold.woff2", as="font", type="font/woff2" crossorigin)
+            link(rel="preload", href=dirFonts + "Inter/Inter-Bold.woff2", as="font", type="font/woff2" crossorigin)
+            link(rel="preload", href=dirFonts + "Inter/Inter-Black.woff2", as="font", type="font/woff2" crossorigin)
+
+            //app shell
+                style
+                    include ../../../dist/frontend/css/app-shell.css
+
+            //   If page class has .dark-theme, 
+            //   link(rel="stylesheet", href=dirFrontend + "css/app-shell-dark-theme.css")
+            //   link(rel="stylesheet", href=dirFrontend + "css/style-dark-theme.css")
+
+            if pageClass === "dark-theme"
+                // css
+                link(rel="stylesheet", href=dirFrontend + "css/app-shell-dark-theme.css")
+                link(rel="stylesheet", href=dirFrontend + "css/style-dark-theme.css")
+            else 
+                // css
+                link(rel="stylesheet", href=dirFrontend + "css/app-shell.css")
+                link(rel="stylesheet", href=dirFrontend + "css/style.css")  
+                
+            // lang
+            script.
+                lang = '#{lang}';
+                frontend_dir = '#{dirFrontend}';
+
+            // serviceWorker
+            script.
+                if ('serviceWorker' in navigator) {
+                    navigator.serviceWorker.register('sw.js').then(function(reg) {
+                        if(reg.installing) {
+                            console.log('sw installing');
+                        } else if(reg.waiting) {
+                            console.log('sw installed');
+                        } else if(reg.active) {
+                            console.log('sw active');
+                        }
+                    }).catch(function(error) {
+                        // registration failed
+                        console.log('Registration failed with ' + error);
+                    });
+                }
+
+            // ieFix
+            script.
+                var loadCss = function () {
+                    var cssId = 'myCss';  // you could encode the css path itself to generate id..
+                    if (!document.getElementById(cssId)) {
+                        var head = document.getElementsByTagName('head')[0];
+                        var link = document.createElement('link');
+                        link.id = cssId;
+                        link.rel = 'stylesheet';
+                        link.type = 'text/css';
+                        link.href = 'frontend/css/ieFix.css';
+                        link.media = 'all';
+                        head.appendChild(link);
+                    }
+                },
+                    getIEVersion = function () {
+                        var sAgent = window.navigator.userAgent;
+                        var Idx = sAgent.indexOf("MSIE");
+
+                        if (Idx > 0)
+                            return false;
+                        else if (!!navigator.userAgent.match(/Trident\/7\./))
+                            return true;
+                        else
+                            return false;
+                    };
+                if (getIEVersion()){
+                    loadCss();
+                }
+
+
+                // HEAD
+    // BODY
+    body(class=pageClass)
+        .site-container
+            block header
+                // HEADER
+                header.site-header.sticky-top.text-white
+                    include ../includes/header
+                // HEADER
+            
+            // CONTENT
+            main.site-main.d-flex.flex-column
+                block content
+                    h1(style="margin: 100px 0; text-align: center;") page content here
+            // CONTENT
+            block footer
+                if pageName != "pageNotfound" && pageName != "pageServerError"
+                    footer.site-footer
+                        include ../includes/footer
+
+            //block cookie
+                // COOKIE INFORMATION
+                .ems-cookie-bnr.fixed-bottom.py-20.py-lg-30.border-top.shadow-lg.collapse.show
+                    .container-lg
+                        .d-flex.justify-content-between
+                            h4.fs-16.fw-600 Çerez Kullanımı
+                            a(class="" href="" aria-label="Close"  data-type="remove")
+                                +icon('close').fs-16
+                        p.fs-13.mt-20.lh-lg Alışveriş deneyiminizi iyileştirmek için yasal düzenlemelere uygun çerezler (cookies) kullanıyoruz. Detaylı bilgiye Gizlilik ve Çerez Politikası sayfamızdan erişebilirsiniz.
+                            
+                // COOKIE INFORMATION
+
+            block loading-page
+                // LOADING PAGE
+                .ems-loading-overlay.ems-overlay
+                
+            // SCROLL TOP
+            //block scroll-top-btn
+                a(id='scroll-top-bx' onclick='scrollTop()')
+                    +icon("ArrowUp")
+
+            block foot
+                #tracker-box
+                // FOOT
+                script#memberLogonTemplate(type="text/template")
+                    .ems-user-name {name} {surname}
+
+                script#memberLogonMobiTemplate(type="text/template")
+                    .ems-user-name {name} {surname}
+
+                script#memberMenuTemplate(type="text/template")
+                    .ems-user-name {name} {surname}
+                    a.ems-user-logout(href='/tr/LogOff') Çıkış Yap
+                    
+                script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js")
+                script(src=dirFrontend + "js/620.js")
+                script(src=dirFrontend + "js/custom.js")
+                // FOOT
+    // BODY

@@ -1,0 +1,428 @@
+// Required Attributes Alert
+body img:not([alt]),
+body a:not([href]),
+body button:not([type]) {
+}
+
+// Typography - https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight#Common_weight_name_mapping
+//100   Thin (Hairline)
+//200	Extra Light (Ultra Light)
+//300	Light
+//400	Normal (Regular)
+//500	Medium
+//600	Semi Bold (Demi Bold)
+//700	Bold
+//800	Extra Bold (Ultra Bold)
+//900	Black (Heavy)
+//950	Extra Black (Ultra Black)
+//@include fontFace($family, $file, $fontWeight, $fontStyle, $fontDisplay)
+
+//FONT
+@include fontFace($font-face1, '#{$font-face1}/#{$font-face1}-Thin', 100, normal, swap);
+@include fontFace($font-face1, '#{$font-face1}/#{$font-face1}-ExtraLight', 200, normal, swap);
+@include fontFace($font-face1, '#{$font-face1}/#{$font-face1}-Light', 300, normal, swap);
+@include fontFace($font-face1, '#{$font-face1}/#{$font-face1}-Regular', 400, normal, swap);
+@include fontFace($font-face1, '#{$font-face1}/#{$font-face1}-Medium', 500, normal, swap);
+@include fontFace($font-face1, '#{$font-face1}/#{$font-face1}-SemiBold', 600, normal, swap);
+@include fontFace($font-face1, '#{$font-face1}/#{$font-face1}-ExtraBold', 700, normal, swap);
+@include fontFace($font-face1, '#{$font-face1}/#{$font-face1}-Bold', 800, normal, swap);
+@include fontFace($font-face1, '#{$font-face1}/#{$font-face1}-Black', 900, normal, swap);
+
+/*
+ * 1. Set `font-size` to support `rem` units
+ *    Not using `font` property because a leading hyphen (e.g. -apple-system) causes the font to break in IE11 and Edge
+ * 2. Prevent adjustments of font size after orientation changes in IE and iOS.
+ * 3. Style
+ */
+
+@include fontFace(
+  $font-face1,
+  '#{$font-face1}/#{$font-face1}-Regular',
+  400,
+  normal,
+  swap
+);
+
+@font-face {
+  font-family: 'icomoon';
+  src: url(/styles/fonts/icomoon/icomoon.eot);
+  src: url(/styles/fonts/icomoon/icomoon.eot?#iefix) format('embedded-opentype'),
+    url(/styles/fonts/icomoon/icomoon.woff) format('woff'),
+    url(/styles/fonts/icomoon/icomoon.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  /* 1 */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.5;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  /* 3 */
+  background: $body-bg-color;
+  color: $body-text-color;
+}
+
+// Text Selection
+::selection {
+  background: $them-color;
+  color: $white;
+  text-shadow: 0 0px 30px $white;
+}
+body p:last-child {
+  margin: 0;
+}
+// Icons
+svg[class^='icon-'],
+%bg-icon,
+i[class^='bg-icon-'] {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+  flex: none !important;
+  vertical-align: middle;
+  font-size: 32px;
+  background-repeat: no-repeat;
+}
+
+.stroke-icon {
+  stroke-width: 1 !important;
+}
+
+// repeatable icons, use for encode: https://yoksel.github.io/url-encoder/
+// usage for scss: @extend %bg-icon; @extend %bg-icon-minus;
+// usage for html: <i class="bg-icon-minus"></i>
+%bg-icon,
+i.bg-icon {
+  &-minus {
+    background-image: url("data:image/svg+xml,%0A%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23000000' d='M11 15h10v1H11z'/%3E%3C/svg%3E%0A");
+  }
+  &-plus {
+    background-image: url("data:image/svg+xml,%0A%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23000000' d='M16.5 10.5V15H21v1h-4.501l.001 4.5h-1l-.001-4.5H11v-1h4.5v-4.5h1z'/%3E%3C/svg%3E%0A");
+  }
+  &-arrow-r {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNyINCiAgICAgaGVpZ2h0PSIxMCINCiAgICAgdmlld0JveD0iMCAwIDcgMTAiDQogICAgIGZpbGw9Im5vbmUiDQogICAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQogICAgPHBhdGggZD0iTTAuNTg1ODI3IDguNTM1NTNMNS41MzU1NyAzLjU4NTc5TDYuOTQ5NzkgNUwyLjAwMDA0IDkuOTQ5NzVMMC41ODU4MjcgOC41MzU1M1oiDQogICAgICAgICAgZmlsbD0iIzFBMTgxOCIgLz4NCiAgICA8cGF0aCBkPSJNMC41ODU4MjcgMS40NjQ0N0wyLjAwMDA0IDAuMDUwMjUyNkw2Ljk0OTc5IDVMNS41MzU1NyA2LjQxNDIxTDAuNTg1ODI3IDEuNDY0NDdaIg0KICAgICAgICAgIGZpbGw9IiMxQTE4MTgiIC8+DQo8L3N2Zz4=");
+  }
+  &-caret-down {
+    background-image: url("data:image/svg+xml,%0A%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23000000' d='M11 15h10v1H11z'/%3E%3C/svg%3E%0A");
+  }
+
+}
+
+// Animations
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes message {
+  0% {
+    transform: scale(0.7);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes toTop {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes toTop100 {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes toEnd {
+  0% {
+    transform: translateX(-30px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes toEnd100 {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+// Emos Framwork
+.ems {
+  // Overlay
+  &-overlay {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: $zindex-modal-backdrop;
+    width: 100%;
+    height: 100%;
+    background: rgba($color: $black, $alpha: 0.7);
+    animation: show 0.5s ease;
+  }
+
+  // Page Loading Overlay
+  &-loading-overlay {
+    //background: url($bg-loading);
+    z-index: $zindex-popover;
+
+    .ajx-loading & {
+      display: block;
+    }
+  }
+
+  &-tab-content {
+    > * {
+      display: none;
+
+      &.selected {
+        display: block;
+      }
+    }
+  }
+  // EMS Modal
+  &-modal {
+    display: none;
+    flex-direction: column;
+    z-index: $zindex-modal;
+  }
+
+  // Forms
+  &-field-feedback {
+    font-size: 12px;
+    color: $primary;
+    margin-top: 5px;
+
+    &:empty {
+      display: none !important;
+    }
+  }
+
+  // Seo Content
+  &-seo {
+    &.with-shadow {
+      .ems-seo-text {
+        &::after {
+          content: '';
+          background: linear-gradient(
+            180deg,
+            rgba(239, 233, 223, 0) 0%,
+            #efe9df 100%
+          );
+        }
+      }
+      .btn-more {
+        position: relative;
+        &::after {
+          content: '';
+          background-image: url("data:image/svg+xml,%3Csvg width='11' height='7' viewBox='0 0 11 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.5 0.5L5.5 5.5L0.5 0.5' stroke='%23272117'/%3E%3C/svg%3E%0A");
+        }
+      }
+    }
+    &-text {
+      position: relative;
+      line-height: 1.5;
+      max-height: 320px;
+      overflow: hidden;
+      transition: all 0.2s ease;
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 60px;
+      }
+    }
+
+    &.activeted {
+      .ems-seo-text {
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+// Read more
+.btn-more {
+  position: relative;
+  .less {
+    display: none;
+  }
+
+  .activeted & {
+    .less {
+      display: inline;
+    }
+
+    .more {
+      display: none;
+    }
+    &::after {
+      transform: rotate(-180deg);
+    }
+  }
+}
+
+// Animations
+@keyframes toTop100 {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+// Banner Overlay
+$banner-arrow-size: 8px;
+.banner-overlay {
+    position: absolute;
+    background-color: $light;
+    color: $dark;
+    padding: 20px 120px 20px 20px;
+    left: 38px;
+    bottom: 32px;
+    &::after {
+        content: "";
+        position: absolute;
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNyINCiAgICAgaGVpZ2h0PSIxMCINCiAgICAgdmlld0JveD0iMCAwIDcgMTAiDQogICAgIGZpbGw9Im5vbmUiDQogICAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQogICAgPHBhdGggZD0iTTAuNTg1ODI3IDguNTM1NTNMNS41MzU1NyAzLjU4NTc5TDYuOTQ5NzkgNUwyLjAwMDA0IDkuOTQ5NzVMMC41ODU4MjcgOC41MzU1M1oiDQogICAgICAgICAgZmlsbD0iIzFBMTgxOCIgLz4NCiAgICA8cGF0aCBkPSJNMC41ODU4MjcgMS40NjQ0N0wyLjAwMDA0IDAuMDUwMjUyNkw2Ljk0OTc5IDVMNS41MzU1NyA2LjQxNDIxTDAuNTg1ODI3IDEuNDY0NDdaIg0KICAgICAgICAgIGZpbGw9IiMxQTE4MTgiIC8+DQo8L3N2Zz4=");
+        background-repeat: no-repeat;
+        background-size: $banner-arrow-size $banner-arrow-size;
+        width: $banner-arrow-size;
+        height: $banner-arrow-size;
+        top: calc(50% - $banner-arrow-size/2);
+        right: 30px;
+    }
+ 
+   
+}
+
+.special-title {
+    span {
+        color: $gray;
+    }
+}
+
+//Breadcrumb
+.breadcrumb {
+    height: 60px;
+    align-items: center;
+    &-item {
+        color: $gray3;
+        &+.breadcrumb-item {
+            &::before {
+                color: $gray3 !important;
+            }
+        }
+        &.active {
+            color: $dark !important;
+        }
+    }
+    .icon-point {
+        font-size: 6px !important;
+    }
+    &-container {
+      background: #EEEBEA;
+    }
+
+    &-white {
+        .breadcrumb {
+            &-item {
+                color: $white !important;
+                &+.breadcrumb-item {
+                    &::before {
+                        color: $white !important;
+                    }
+                }
+                &.active {
+                    color: $white !important;
+                }
+            }
+        }
+    }
+    &-absolute {
+        position: absolute;
+        top: 30px;
+        left: 45px;
+        z-index: 2;
+    }
+
+}
+
+.bg-gray4 {
+  background-color: $gray4 !important;
+}
+
+.ems-select {
+  &::after {
+    content: "";
+    display: block;
+    width: 32px;
+    height: 32px;
+    opacity: 0.7;
+    position: absolute;
+    top: 50%;
+    right: 24px;
+    background: url(../../frontend/images/arrow-down.svg);
+    background-repeat: no-repeat;
+  }
+}
+
+.card {
+  &-rating {
+    &-bar,
+    &-current {
+        --star-qty: 5;
+        --star-width: 13px;
+        --star-ratio: .85;
+        background-image: url(#{$dir-images + 'rating.svg'});
+        background-size: var(--star-width);
+        background-position: left bottom;
+        width: calc(var(--star-qty) * var(--star-width));
+        height: calc(var(--star-ratio) * var(--star-width));
+    }
+    &-current {
+        background-position: left top;
+    }
+  }
+}
+
